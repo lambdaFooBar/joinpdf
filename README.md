@@ -10,7 +10,7 @@ Fairly simple and feel free to edit it to anything more featureful.
 
 Example:
 
-> joinpdf -f Merged.pdf file1.pdf file2.pdf file3.pdf
+`joinpdf -f Merged.pdf file1.pdf file2.pdf file3.pdf`
 
 That's it!
 
