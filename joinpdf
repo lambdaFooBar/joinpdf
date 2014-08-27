@@ -1,0 +1,22 @@
+#!/bin/bash
+
+show_help() {
+	echo "Usage: `basename $0` -f merged.pdf input1.pdf input2.pdf input3.pdf ..."
+	exit
+}
+
+OPTIND=1
+outputfname="output.pdf"
+while getopts ":f:" opt; do
+	case $opt in
+		f)
+			outputfname=$OPTARG
+			;;
+		\?)
+			echo "invalid option"
+			show_help
+	esac
+
+done
+
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOUTPUTFILE=${outputfname} ${@:$OPTIND} 
